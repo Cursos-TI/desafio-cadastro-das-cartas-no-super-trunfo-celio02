@@ -20,7 +20,7 @@ scanf("%s", estado1);
 printf("digite o nome da cidade: \n");
 scanf("%s", cidade1);
 
-printf("digite a quantidade pontos turisticos: \n");
+printf("digite a quantidade de pontos turisticos: \n");
 scanf("%d", &pontos);
 
 printf("digite a quantidade de habitantes: \n");
