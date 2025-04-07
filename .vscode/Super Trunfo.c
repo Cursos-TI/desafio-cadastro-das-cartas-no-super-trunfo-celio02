@@ -4,12 +4,13 @@ int main(){
 char carta1[30]; //codigo_carta
 char estado1[50]; //nome_estado
 char cidade1[50]; //nome_cidade
-int pontos; //quantidade_pontosTuristicos
-int populacao; //quantidade_habitantes
-float area; //area_Total
-float PIB; //valor_PIB
-float densidade_populacional; //densidade_populacional
-float PIB_perCapita; //PIB_perCapita
+int pontos1; //quantidade_pontosTuristicos
+unsigned int populacao1; //quantidade_habitantes
+float area1; //area_Total
+float PIB1; //valor_PIB
+float densidade_populacional1; //densidade_populacional
+float PIB_perCapita1; //PIB_perCapita
+float superPoder1; //soma de todos os atributos
 
 printf("Bem vindos ao jogo super trunfo,preencha o valor de cada card: \n");
 
@@ -23,32 +24,36 @@ printf("digite o nome da cidade: \n");
 scanf("%s", cidade1);
 
 printf("digite a quantidade de pontos turisticos: \n");
-scanf("%d", &pontos);
+scanf("%d", &pontos1);
 
 printf("digite a quantidade de habitantes: \n");
-scanf("%d", &populacao);
+scanf("%lu", &populacao1);
 
 printf("digite a area em km quadrados: \n");
-scanf("%e", &area);
+scanf("%e", &area1);
 
 printf("digite o PIB: \n");
-scanf("%f", &PIB);
+scanf("%f", &PIB1);
 
-densidade_populacional = (populacao / area);
-printf("a densidade populacional da cidade é: %.2f; \n", densidade_populacional);
+densidade_populacional1 = (populacao1 / area1);
+printf("a densidade populacional da cidade é: %.2f \n", densidade_populacional1);
 
-PIB_perCapita = (PIB / populacao);
-printf("o PIB per capita da cidade é: %.2f; \n", PIB_perCapita);
+PIB_perCapita1 = (PIB1 / populacao1);
+printf("o PIB per capita da cidade é: %.2f \n", PIB_perCapita1);
+ 
+superPoder1 = (pontos1 + populacao1 + area1 + PIB1 + PIB_perCapita1 + 1/densidade_populacional1);
+printf("o super poder da carta 1 é: %.2f \n", superPoder1);
 
 char carta2[30];//codigo_carta2
 char estado2[30];//codigo_carta2
 char cidade2[30];//nome_cidade2
 int pontos2;//quantidade_pontosTuristicos
-int populacao2;//quantidade_habitantes
+unsigned int populacao2;//quantidade_habitantes
 float area2;//areaTotal
 float PIB2;//valor_PIB
 float densidade_populacional2; //densidade_populacional
 float PIB_perCapita2; //PIB_perCapita2
+float superPoder2; //soma de todos os atributos
 
 printf("agora preecha o segundo card: \n");
 printf("digite o codigo ds carta2: \n");
@@ -78,13 +83,43 @@ printf("a densidade populacional da cidade 2 é: %.2f \n", densidade_populaciona
 PIB_perCapita2 = (PIB2 / populacao2);
 printf("O PIB percapita da cidade 2 é: %.2f \n", PIB_perCapita2);
 
+superPoder2 = (pontos2 + populacao2 + area2 + PIB2 + PIB_perCapita2 + 1/densidade_populacional2);
+printf("o super poder da carta 2 é: %.2f \n", superPoder2);
+
+//Comparando cartas
+printf("Comparando atributos das cartas\n");
+printf("Carta1 - %s: %f \n", cidade1, area1);
+printf("carta2 - %s: %f \n", cidade2,area2);
+printf("no atributo area, a carta vencedora foi \n");
+
+if (area1 > area2) {
+    printf("a carta 1 venceu");
+ } else {
+    printf("carta 2 venceu");
+ }
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
 return 0;
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
